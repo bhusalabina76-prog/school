@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Login | School Management System</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="login-page">
+<div class="login-wrap">
+  <div class="login-brand">
+    <div class="logo">S</div>
+    <h1>School Management System</h1>
+    <p>Secure access for Admin, Teachers, Students, Parents, Staff & Accountants</p>
+  </div>
+  <div class="login-card">
+    <h2>Welcome Back</h2><p class="muted">Sign in to continue</p>
+    <form id="loginForm">
+      <label>Login ID / Email</label><input id="email" type="text" placeholder="Enter your login ID" required autocomplete="username">
+      <label>Password</label><input id="password" type="password" placeholder="Enter password" required>
+      <button class="btn primary full" type="submit">Login</button>
+      <button class="forgot-link" type="button" onclick="openForgotPassword()">Forgot / Change Password?</button>
+      <div id="error" class="error"></div>
+    </form>
+    <div class="login-note">
+      <b>Account access</b>
+      <p>Only the administrator creates user accounts. Your school will provide your login ID and one-time initial password. Change it to your own password on first login.</p>
+    </div>
+  </div>
+</div>
+<script src="../js/auth.js"></script>
+</body>
+</html>

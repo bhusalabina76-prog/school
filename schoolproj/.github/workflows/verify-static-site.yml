@@ -1,0 +1,29 @@
+name: Verify static site
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate required files and JavaScript
+        run: |
+          test -f index.html
+          test -f pages/login.html
+          test -f css/style.css
+          node --check js/app.js
+          node --check js/auth.js
+          node -e "JSON.parse(require('node:fs').readFileSync('vercel.json', 'utf8'))"
